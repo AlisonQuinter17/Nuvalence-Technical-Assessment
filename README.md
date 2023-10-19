@@ -33,13 +33,13 @@ $ npm install -g @angular/cli
 - Clone this repository to your local machine using:
 
 ```bash
-$ git clone [REPOSITORY_URL]
+$ git clone https://github.com/AlisonQuinter17/Nuvalence-Technical-Assessment.git
 ```
 
 - Navigate to the project directory:
 
 ```bash
-$ cd [project_name]
+$ cd address-book
 ```
 
 - Install the dependencies:
