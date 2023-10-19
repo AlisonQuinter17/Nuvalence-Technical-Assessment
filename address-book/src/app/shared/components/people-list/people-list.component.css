@@ -1,0 +1,172 @@
+.container {
+  padding: 1rem 2rem;
+}
+
+.user-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+  transition: 0.3s;
+}
+
+.user-card:hover {
+  background-color: #1f1f1f;
+  color: white;
+  cursor: pointer;
+}
+
+.user-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-details h2 {
+  margin: 0;
+  font-size: 22px;
+  /* color: #333; */
+}
+
+.user-details p {
+  margin: 5px 0;
+  font-size: 18px;
+  /* color: #777; */
+}
+
+.filterInput {
+  outline: none;
+  text-indent: 16px;
+  color: #333;
+  border: solid 1px rgb(236, 235, 235);
+  background-color: #fff;
+  border-radius: 8px;
+  height: 48px;
+  width: 97.5%;
+  font-size: 16px;
+  padding-left: 30px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+}
+
+.user-contact p {
+  margin: 5px 0;
+  font-size: 18px;
+  width: 30vh;
+}
+
+.detail {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.detail img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.desktop-content {
+  display: block;
+}
+
+.mobile-content {
+  display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 991px) {
+  .inputWithIcon {
+    padding: 10px;
+  }
+
+  .user-details h2 {
+    font-size: 18px;
+  }
+
+  .user-details p {
+    font-size: 16px;
+  }
+  .user-contact {
+    display: none;
+  }
+  .desktop-content {
+    display: none;
+  }
+
+  .mobile-content {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0rem;
+  }
+  .user-card {
+    border: none;
+    padding: 0.8rem;
+    border-radius: 0px;
+    box-shadow: none;
+    margin-top: 0px;
+  }
+
+  .searchIcon {
+    top: 42%;
+    left: 20px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .filterInput {
+    width: 94%;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: #eaeaea;
+  }
+
+  .inputWithIcon {
+    padding: 10px;
+  }
+
+  .user-details h2 {
+    font-size: 18px;
+  }
+
+  .user-details p {
+    font-size: 16px;
+  }
+  .user-contact {
+    display: none;
+  }
+
+  .desktop-content {
+    display: none;
+  }
+
+  .mobile-content {
+    display: block;
+  }
+}

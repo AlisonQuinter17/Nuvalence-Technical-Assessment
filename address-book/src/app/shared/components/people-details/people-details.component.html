@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="profile">
+        <div class="profile-image">
+            <img src={{selectedContact.picture.large}} alt="picture">
+        </div>
+        <div class="profile-text">
+            <h2>{{selectedContact.name.title}} {{selectedContact.name.first}} {{selectedContact.name.last}}</h2>
+        </div>
+    </div>
+    <div class="user-card detail">
+        <div class="icon-label">
+            <p>Email</p>
+            <img src="/assets/images/email-icon.svg" alt="phone">
+        </div>
+        <p>{{selectedContact.email}}</p>
+    </div>
+    <div class="user-card detail">
+        <div class="icon-label">
+            <p>Mobile</p>
+            <img src="/assets/images/phone-icon.svg" alt="phone">
+        </div>
+        <p>{{selectedContact.phone}}</p>
+    </div>
+    <div class="user-card detail">
+        <div class="icon-label">
+            <p>Gender</p>
+            <img src="/assets/images/person-icon.svg" alt="phone">
+        </div>
+        <p>{{selectedContact.gender}}</p>
+    </div>
+    <div class="user-card detail">
+        <div class="icon-label">
+            <p>Birthday</p>
+            <img src="/assets/images/birthday-icon.svg" alt="bithday">
+        </div>
+        <p>{{this.birthday}}</p>
+    </div>
+    <div class="user-card detail">
+        <div class="icon-label">
+            <p>Location</p>
+            <img src="/assets/images/location-icon.svg" alt="location">
+        </div>
+        <p>{{selectedContact.location.state}}, {{selectedContact.location.country}}</p>
+    </div>
+</div>
