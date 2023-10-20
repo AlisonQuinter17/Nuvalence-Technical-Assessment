@@ -6,7 +6,7 @@ body {
   /* max-width: 1300px; */
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   body {
     background-color: #ffffff;
   }

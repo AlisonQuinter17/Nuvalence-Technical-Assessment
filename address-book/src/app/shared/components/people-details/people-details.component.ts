@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/core/services/user.service';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-people-details',
@@ -7,14 +9,19 @@ import { UserService } from 'src/app/core/services/user.service';
   styleUrls: ['./people-details.component.css']
 })
 export class PeopleDetailsComponent implements OnInit {
+  @HostListener('window:resize', ['$event'])
   selectedContact: any;
   birthday = '';
+  resizeSubscription: any;
 
   constructor(
-    private contactService: UserService
+    private contactService: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.resizeSubscription = this.onResize.bind(this);
+    window.addEventListener('resize', this.resizeSubscription);
     let data = sessionStorage.getItem("selectedContact");
     if (data) {
       this.selectedContact = JSON.parse(data);
@@ -29,10 +36,19 @@ export class PeopleDetailsComponent implements OnInit {
       if (contact) {
         this.selectedContact = contact;
         this.birthday = contact.dob.date.split('T')[0];
-        console.log('this.selectedContact: ', this.selectedContact)
         sessionStorage.setItem('selectedContact', JSON.stringify(contact));
       }
     });
+  }
+
+  onResize(event: any) {
+    if (event.target.innerWidth >= 991) {
+      this.router.navigate(['/people-list']);
+    }
+  }
+
+  ngOnDestroy() {
+    window.removeEventListener('resize', this.resizeSubscription);
   }
 
 }

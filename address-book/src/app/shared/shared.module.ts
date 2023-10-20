@@ -6,6 +6,7 @@ import { PeopleDetailsComponent } from './components/people-details/people-detai
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FormsModule } from '@angular/forms';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     PeopleListComponent,
     PeopleDetailsComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    PaginatorComponent
   ],
   imports: [
     CommonModule,

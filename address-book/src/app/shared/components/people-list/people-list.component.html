@@ -3,30 +3,54 @@
         <input class="filterInput" [(ngModel)]="searchTerm" (keyup)="filterData()" placeholder="Search...">
         <img src="/assets/images/search-icon.svg" alt="Search" class="searchIcon">
     </div>
-    <div class="user-card" *ngFor="let item of filteredData" (click)="onContactSelected(item)">
-        <img src={{item.picture.large}} alt="User Image" class="user-image">
-        <div class="user-details">
-            <div class="desktop-content">
+    <div class="desktop-content">
+        <div class="user-card" *ngFor="let item of splittedData[actualPage]" (click)="onContactSelected(item)">
+            <img src={{item.picture.large}} alt="User Image" class="user-image">
+            <div class="user-details">
                 <h2>{{item.name.title}} {{item.name.first}} {{item.name.last}}</h2>
                 <p>{{item.nat}}</p>
             </div>
-            <div class="mobile-content">
+            <div class="user-contact">
+                <div class="detail">
+                    <img src="/assets/images/phone-icon.svg" alt="phone">
+                    <p>{{item.phone}}</p>
+                </div>
+                <div class="detail">
+                    <img src="/assets/images/email-icon.svg" alt="phone">
+                    <p>{{item.email}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-content">
+        <div class="user-card" *ngFor="let item of filteredData" (click)="onContactSelected(item)">
+            <img src={{item.picture.large}} alt="User Image" class="user-image">
+            <div class="user-details">
+                <div class="desktop-content">
+                    <h2>{{item.name.title}} {{item.name.first}} {{item.name.last}}</h2>
+                    <p>{{item.nat}}</p>
+                </div>
                 <h2>{{item.name.first}} {{item.name.last}}</h2>
                 <div class="detail">
                     <img src="/assets/images/phone-icon.svg" alt="phone">
                     <p>{{item.phone}}</p>
                 </div>
             </div>
-        </div>
-        <div class="user-contact">
-            <div class="detail">
-                <img src="/assets/images/phone-icon.svg" alt="phone">
-                <p>{{item.phone}}</p>
+            <div class="user-contact">
+                <div class="detail">
+                    <img src="/assets/images/phone-icon.svg" alt="phone">
+                    <p>{{item.phone}}</p>
+                </div>
+                <div class="detail">
+                    <img src="/assets/images/email-icon.svg" alt="phone">
+                    <p>{{item.email}}</p>
+                </div>
             </div>
-            <div class="detail">
-                <img src="/assets/images/email-icon.svg" alt="phone">
-                <p>{{item.email}}</p>
-            </div>
         </div>
+    </div>
+    <br>
+    <div class="pagination" *ngIf="totalPaginas$ | async as totalPaginas">
+        <p class="page">Page {{actualPage + 1}} of {{totalPaginas}}</p>
+        <app-paginator [totalPages]="totalPaginas" (selectedpage)="pageUpdate($event)"></app-paginator>
     </div>
 </div>

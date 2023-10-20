@@ -33,14 +33,14 @@
 
 .user-details h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 20px;
   /* color: #333; */
 }
 
 .user-details p {
   margin: 5px 0;
-  font-size: 18px;
-  /* color: #777; */
+  font-size: 16px;
+  color: rgb(157, 157, 157);
 }
 
 .filterInput {
@@ -94,6 +94,17 @@
   display: none;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.page {
+  font-size: 14px;
+  color: #5C5C5C;
+}
+
 /* Responsive */
 
 @media (max-width: 991px) {
@@ -117,6 +128,10 @@
 
   .mobile-content {
     display: block;
+  }
+
+  .pagination {
+    display: none;
   }
 }
 

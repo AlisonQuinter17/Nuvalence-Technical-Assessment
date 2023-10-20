@@ -1,5 +1,5 @@
 <div class="navbar">
-    <button (click)="goBack()">
+    <button *ngIf="verifyPath()" (click)="goBack()">
         <img src="/assets/images/back-icon.svg" alt="back-arrow"> Back
     </button>
     <span>Address book</span>

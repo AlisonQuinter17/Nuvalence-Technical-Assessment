@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { DataService } from 'src/app/core/services/data.service';
 import { UserService } from 'src/app/core/services/user.service';
 
@@ -11,7 +12,10 @@ import { UserService } from 'src/app/core/services/user.service';
 export class PeopleListComponent implements OnInit {
   data: any[] = [];
   filteredData: any[] = [];
+  splittedData: any[] = [];
   searchTerm: string = '';
+  actualPage: number = 0;
+  totalPaginas$ = new BehaviorSubject<number>(0);
 
   constructor(
     private dataList: DataService,
@@ -21,15 +25,25 @@ export class PeopleListComponent implements OnInit {
 
   ngOnInit(): void {
     this.clearCache();
-    this.getAllData();
+    this.getList();
   }
 
-  getAllData() {
+  getList() {
     this.dataList.getAllUsers().subscribe((response: any) => {
       this.data = response.results;
-      console.log('Response: ', this.data);
       this.filteredData = this.data;
+      this.splitData(10, this.filteredData);
+      this.pageUpdate(1);
     })
+  }
+
+  onContactSelected(contact: any) {
+    if (window.innerWidth <= 991) {
+      this.contactService.setSelectedContact(contact);
+      this.router.navigate(['details/:id'])
+    } else {
+      this.contactService.setSelectedContact(contact);
+    }
   }
 
   filterData() {
@@ -44,15 +58,26 @@ export class PeopleListComponent implements OnInit {
       ];
       return itemToSearch.some(data => data.toLowerCase().includes(this.searchTerm.toLowerCase()));
     });
+    this.splitData(10, this.filteredData);
+    this.actualPage = 0;
   }
 
-  onContactSelected(contact: any) {
-    if (window.innerWidth <= 768) {
-      this.contactService.setSelectedContact(contact);
-      this.router.navigate(['details/:id'])
-    } else {
-      this.contactService.setSelectedContact(contact);
+  splitData(pageNumber: number, existData?: { name: { last: string } }[]) {
+    this.splittedData = [];
+
+    if (!existData || !existData.length) return;
+    existData.sort((a, b) => a.name.last.localeCompare(b.name.last));
+  
+    let index = 0;
+    while (index < existData.length) {
+      this.splittedData.push(existData.slice(index, index + pageNumber));
+      index += pageNumber;
     }
+    this.totalPaginas$.next(this.splittedData.length);
+  }  
+
+  pageUpdate(pageNumber: number) {
+    this.actualPage = pageNumber - 1;
   }
 
   clearCache() {
