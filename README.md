@@ -24,7 +24,8 @@
 
 ##### The visual components of this project were crafted solely using HTML and CSS, without reliance on any frameworks or libraries.
 
-![Views](https://github.com/AlisonQuinter17/Nuvalence-Technical-Assessment/blob/main/address-book/src/assets/images/views.png?raw=true)
+![Views](https://github.com/AlisonQuinter17/Nuvalence-Technical-Assessment/blob/main/address-book/src/assets/images/mobile.png?raw=true)
+![Views](https://github.com/AlisonQuinter17/Nuvalence-Technical-Assessment/blob/main/address-book/src/assets/images/desktop.png?raw=true)
 
 ## Deployment / running instructions.
 - **Node.js** and **npm**
