@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   }
 
   verifyPath(): boolean {
-    return this.router.url === '/details/:id';
+    return this.router.url === '/details';
   }
 
   goBack(): void {

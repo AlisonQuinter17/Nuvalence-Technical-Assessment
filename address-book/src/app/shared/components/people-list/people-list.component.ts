@@ -40,7 +40,7 @@ export class PeopleListComponent implements OnInit {
   onContactSelected(contact: any) {
     if (window.innerWidth <= 991) {
       this.contactService.setSelectedContact(contact);
-      this.router.navigate(['details/:id'])
+      this.router.navigate(['details'])
     } else {
       this.contactService.setSelectedContact(contact);
     }
