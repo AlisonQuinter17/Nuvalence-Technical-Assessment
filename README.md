@@ -11,17 +11,20 @@
 
 - **Filter:** You can search through the filter functionality for the user you have in mind.
 
+- **Pagination:** You will be able to navigate through multiple pages of the contact list, displaying a limited number (10) of contacts per page for better organization and visualization. You can move forward or backward between pages according to your needs.
+
+- **Sorting:** List of contacts ordered by last name in alphabetical order, facilitating the systematic location and display of contacts.
+
 ### Improvements
-- **Pagination:** Although the initial requirement was to display ten people, it would be useful to implement pagination to navigate through a larger set of contacts. Estimate: 5 hours.
-
-- **Improved Responsive Design:** Although the project was designed considering a mostly mobile and desktop audience, if I had more time I would have worked on perfecting the adaptability and user experience on all devices and screen sizes. Estimate: 4 additional hours.
-
-- **Automated Tests:** It would incorporate unit and integration tests to guarantee the robustness of the code and prevent possible errors in future iterations. Estimate: 8 hours.
+- **Animations and effects:**  If I had more time I would add different CSS animations and effects that would make the user interface more dynamic and attractive to the user.
 
 - **Improved UI/UX:** If I had more time I would like to improve the interface and user experience by focusing more specifically on the details. Estimate: 4 hours.
 
+- **Automated Tests:** It would incorporate unit and integration tests to guarantee the robustness of the code and prevent possible errors in future iterations. Estimate: 8 hours.
 
-## Deployment / running instructions.
+##### This project was developed only with HTML/CSS in terms of UI/UX.
+
+## Deployment/running instructions.
 - **Node.js** and **npm**
 - **Angular CLI:** You can install it globally using npm:
 
