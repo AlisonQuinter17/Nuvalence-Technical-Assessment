@@ -22,9 +22,11 @@
 
 - **Automated Tests:** It would incorporate unit and integration tests to guarantee the robustness of the code and prevent possible errors in future iterations. Estimate: 8 hours.
 
-##### This project was developed only with HTML/CSS in terms of UI/UX.
+##### The visual components of this project were crafted solely using HTML and CSS, without reliance on any frameworks or libraries.
 
-## Deployment/running instructions.
+![Views](https://github.com/AlisonQuinter17/Nuvalence-Technical-Assessment/tree/main/address-book/src/assets/images/views.png)
+
+## Deployment / running instructions.
 - **Node.js** and **npm**
 - **Angular CLI:** You can install it globally using npm:
 
